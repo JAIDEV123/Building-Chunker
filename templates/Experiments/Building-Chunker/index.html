@@ -2,306 +2,340 @@
 <html>
 <head>
 
-	<title>Experiments</title>
-	<meta charset="utf-8">
-	
-	<!-- Custom Styles for website -->
-	<link rel="stylesheet" href="./static/css/experiment.css">
+    <title>Building Chunker</title>
+    <meta charset="utf-8">
 
+    <!-- Custom Styles for website -->
+    <link rel="stylesheet" href="./static/css/experiment.css">
 
-	<!-- Standard Imported Bootstrap and More -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Standard Imported Bootstrap and More -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
-	<!-- Particles JS is a library for building the particles seen on the website -->
-	<script type="text/javascript" src="./static/js/particles.min.js"></script>
+    <!-- Particles JS is a library for building the particles seen on the website -->
+    <script type="text/javascript" src="./static/js/particles.min.js"></script>
 
 </head>
+
 <body>
 
-	<div class="container-fluid h-10">
-		<div id="particles-js"></div>
-	</div>
+    <div class="container-fluid h-10">
+        <div id="particles-js"></div>
+    </div>
 
-	<!-- Navbar -->
-	<nav class="navbar navbar-expand-lg main-nav header">
-	  <a href="{{ url_for('index') }}" class="logo">
-	  	<h1><strong>NLP@IIIT-H</strong></h1>
-	  </a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-	    <i class="fas fa-bars"></i>
-	  </button>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg main-nav header">
+        <a href="{{ url_for('index') }}" class="logo">
+            <h1><strong>NLP@IIIT-H</strong></h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
 
-	  <div class="collapse navbar-collapse" id="navbarToggler">
-	    <ul class="navbar-nav ml-auto">
-	      <li class="nav-item">
-	        <a class="nav-link" href="{{ url_for('index', _anchor='about') }}">About</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="{{ url_for('experiments') }}">Experiments</a>
-	      </li>      
-	    </ul>
-	  </div>
-	</nav>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('index', _anchor='about') }}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('experiments') }}">Experiments</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-	<!-- Secondary Navbar for experiment -->
+    <!-- Secondary Navbar for experiment -->
 
-	<nav class="navbar navbar-expand-lg navbar-light">
-	  <div class="d-flex w-100">
-	    <ul class="navbar-nav nav-pills ml-auto mx-auto justify-content-center w-100">
-	      <li class="nav-item">
-	        <a class="nav-link active intro" onclick="intro()">Introduction</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link theory" onclick="theory()">Theory</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link objective" onclick="objective()">Objective</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link experiment" onclick="experiment()">Experiment</a>
-	      </li> 
-	      <li class="nav-item">
-	        <a class="nav-link quiz" onclick="quiz()">Quizzes</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link procedure" onclick="procedure()">Procedure</a>
-	      </li>    
-	    </ul>
-	  </div>
-	</nav>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="d-flex w-100">
+            <ul class="navbar-nav nav-pills ml-auto mx-auto justify-content-center w-100">
+                <li class="nav-item">
+                    <a class="nav-link active intro" onclick="intro()">Introduction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link theory" onclick="theory()">Theory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link objective" onclick="objective()">Objective</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link experiment" onclick="experiment()">Experiment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link quiz" onclick="quiz()">Quizzes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link procedure" onclick="procedure()">Procedure</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-	<!-- Header Image for Experiment -->
+    <!-- Header Image for Experiment -->
 
-	<div class="container-fluid experiment-bg h-25">
-		<div class="row h-100">
-			<div class="col align-self-center text-center">
-				<h1 class="txt-blue bold">
+    <div class="container-fluid experiment-bg h-25">
+        <div class="row h-100">
+            <div class="col align-self-center text-center">
+                <h1 class="txt-blue bold">
 					Building Chunker
 				</h1>
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
 
-	<!-- Section Content for Experiment -->
+    <!-- Section Content for Experiment -->
 
-	<div class="container blocko">
-		
-		<div class="row" >
+    <div class="container blocko">
 
-			<div class="col w-100">
-				<div class="container-fluid h-100">
+        <div class="row">
 
-					<!-- Introduction -->
-					<div class="row blocko" id="intro">
-						<div class="col text-justify">
-							<h1>Introduction</h1>
-							<br>
-							<p>Chunking is an analysis of a sentence which identifies the constituents (noun groups, verbs, verb groups, etc.) which are correlated. These are non-overlapping regions of text. Usually, each chunk contains a head, with the possible addition of some function words and modifiers either before or after depending on languages. These are non-recursive in nature i.e. a chunk cannot contain another chunk of the same category.</p>
+            <div class="col w-100">
+                <div class="container-fluid h-100">
 
-							<p>
-								Some of the groups possible are:
-								<ol>
-									<li>Noun Verb</li>
-									<li>Verb Group</li>
-								</ol>
-							</p>
+                    <!-- Introduction -->
+                    <div class="row blocko" id="intro">
+                        <div class="col text-justify">
+                            <h1>Introduction</h1>
+                            <br>
+                            <p>Chunking is an analysis of a sentence which identifies the constituents (noun groups, verbs, verb groups, etc.) which are correlated. These are non-overlapping regions of text. Usually, each chunk contains a head, with the possible addition of some function words and modifiers either before or after depending on languages. These are non-recursive in nature i.e. a chunk cannot contain another chunk of the same category.</p>
 
-							<p>
-								For example, the sentence 'He reckons the current account deficit will narrow to only 1.8 billion in September.' can be divided as follows:
-							</p>
+                            <p>
+                                Some of the groups possible are:
+                                <ol>
+                                    <li>Noun Verb</li>
+                                    <li>Verb Group</li>
+                                </ol>
+                            </p>
 
-							<p class="code">[NP He ] [VP reckons ] [NP the current account deficit ] [VP will narrow ] [PP to ] [NP only 1.8 billion ] [PP in ] [NP September ]</p>
+                            <p>
+                                For example, the sentence 'He reckons the current account deficit will narrow to only 1.8 billion in September.' can be divided as follows:
+                            </p>
 
-							<p>
-								Each chunk has an open boundary and close boundary that delimit the word groups as a minimal non-recursive unit.
-							</p>
-						</div>
-					</div>
+                            <p class="code">[NP He ] [VP reckons ] [NP the current account deficit ] [VP will narrow ] [PP to ] [NP only 1.8 billion ] [PP in ] [NP September ]</p>
 
-					<div class="row blocko" id="theory">
-						<div class="col text-justify">
-							<h1>Theory</h1>
-							<br>
-							<p>
-								<h4>Hidden Markov Model</h4>
-							</p>
-							<p>
-								In the mid 1980s, researchers in Europe began to use Hidden Markov models (HMMs) to disambiguate parts of speech. HMMs involve counting cases, and making a table of the probabilities of certain sequences. For example, once you've seen an article such as 'the', perhaps the next word is a noun 40% of the time, an adjective 40%, and a number 20%. Knowing this, a program can decide that "can" in "the can" is far more likely to be a noun than a verb or a modal. The same method can of course be used to benefit from knowledge about following words.
-							</p>
-							<p>
-								More advanced ("higher order") HMMs learn the probabilities not only of pairs, but triples or even larger sequences. So, for example, if you've just seen an article and a verb, the next item may be very likely a preposition, article, or noun, but much less likely another verb.
-							</p>
-							<p>
-								When several ambiguous words occur together, the possibilities multiply. However, it is easy to enumerate every combination and to assign a relative probability to each one, by multiplying together the probabilities of each choice in turn.
-							</p>
-							<p>
-								It is worth remembering, as Eugene Charniak points out in Statistical techniques for natural language parsing, that merely assigning the most common tag to each known word and the tag "proper noun" to all unknowns, will approach 90% accuracy because many words are unambiguous.
-							</p>
-							<p>
-								HMMs underlie the functioning of stochastic taggers and are used in various algorithms. Accuracies for one such algorithm (TnT) on various training data is shown here.
-							</p>
+                            <p>
+                                Each chunk has an open boundary and close boundary that delimit the word groups as a minimal non-recursive unit.
+                            </p>
+                        </div>
+                    </div>
 
-							<h4>Conditional Random Field</h4>
-							<p>
-								Conditional random fields (CRFs) are a class of statistical modelling method often applied in machine learning, where they are used for structured prediction. Whereas an ordinary classifier predicts a label for a single sample without regard to "neighboring" samples, a CRF can take context into account. Since it can consider context, therefore CRF can be used in Natural Language Processing. Hence, Parts of Speech tagging is also possible. It predicts the POS using the lexicons as the context.
-							</p>
-							<p>
-								In this experiment both algorithms are used for training and testing data. As the size of training corpus increases, it is observed that accuracy increases. Further, even features also play an important role for better output. In this experiment, we can see that Parts of Speech as a feature performs better than only lexicon as the feature. Therefore, it is important to select proper features for training a model to have better accuracy. 
-							</p>
-						</div>
-					</div>
-					
-					<div class="row blocko" id="objective">
-						<div class="col text-justify">
-							<h1>Objective</h1>
-							<br>
-							<p>
-								The objective of the experiment is to know the importance of selecting proper features for training a model and size of training corpus in learning how to do cunking.
-							</p>
-						</div>
-					</div>
+                    <div class="row blocko" id="theory">
+                        <div class="col text-justify">
+                            <h1>Theory</h1>
+                            <br>
+                            <p>
+                                <h4>Hidden Markov Model</h4>
+                            </p>
+                            <p>
+                                In the mid 1980s, researchers in Europe began to use Hidden Markov models (HMMs) to disambiguate parts of speech. HMMs involve counting cases, and making a table of the probabilities of certain sequences. For example, once you've seen an article such as 'the', perhaps the next word is a noun 40% of the time, an adjective 40%, and a number 20%. Knowing this, a program can decide that "can" in "the can" is far more likely to be a noun than a verb or a modal. The same method can of course be used to benefit from knowledge about following words.
+                            </p>
+                            <p>
+                                More advanced ("higher order") HMMs learn the probabilities not only of pairs, but triples or even larger sequences. So, for example, if you've just seen an article and a verb, the next item may be very likely a preposition, article, or noun, but much less likely another verb.
+                            </p>
+                            <p>
+                                When several ambiguous words occur together, the possibilities multiply. However, it is easy to enumerate every combination and to assign a relative probability to each one, by multiplying together the probabilities of each choice in turn.
+                            </p>
+                            <p>
+                                It is worth remembering, as Eugene Charniak points out in Statistical techniques for natural language parsing, that merely assigning the most common tag to each known word and the tag "proper noun" to all unknowns, will approach 90% accuracy because many words are unambiguous.
+                            </p>
+                            <p>
+                                HMMs underlie the functioning of stochastic taggers and are used in various algorithms. Accuracies for one such algorithm (TnT) on various training data is shown here.
+                            </p>
 
-					<div class="row blocko" id="experiment">
-						<div class="col">
-							<h1>Experiment</h1>
+                            <h4>Conditional Random Field</h4>
+                            <p>
+                                Conditional random fields (CRFs) are a class of statistical modelling method often applied in machine learning, where they are used for structured prediction. Whereas an ordinary classifier predicts a label for a single sample without regard to "neighboring" samples, a CRF can take context into account. Since it can consider context, therefore CRF can be used in Natural Language Processing. Hence, Parts of Speech tagging is also possible. It predicts the POS using the lexicons as the context.
+                            </p>
+                            <p>
+                                In this experiment both algorithms are used for training and testing data. As the size of training corpus increases, it is observed that accuracy increases. Further, even features also play an important role for better output. In this experiment, we can see that Parts of Speech as a feature performs better than only lexicon as the feature. Therefore, it is important to select proper features for training a model to have better accuracy.
+                            </p>
+                        </div>
+                    </div>
 
-							<ol>
-								<li class="blocko">
-								    <div class="category_div" id="category_div">Please specify language:
-								        <select name="category" class="required-entry" id="category" onclick="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
-								            <option value="">Select Language</option>
-								            <option value="English">English</option>
-								            <option value="Hindi">Hindi</option>
-								        </select>
-								    </div>
-								</li>
-								<li class="blocko">
-								    <div class="sub_category_div" id="sub_category_div">Please select the size of a corpus:
-								        <script type="text/javascript" language="JavaScript">
-								            document.write('<select name="subcategory" id="subcategory" onchange="javascript: dynamicdropdownone(this.options[this.selectedIndex].value);"><option value="">Select the above option</option></select>')
-								        </script>
-								        <noscript>
-								            <select name="subcategory" id="subcategory">
-								                <option value="">Please select the size of a corpus:</option>
-								            </select>
-								        </noscript>
-								    </div>
-								</li>
-								
-								<li class="blocko">
-								    <div class="sub_subcategory_div" id="sub_subcategory_div">Please select the algorithm for training:
-								        <script type="text/javascript" language="JavaScript">
-								            document.write('<select name="sub_subcategory" onchange="javascript: dynamicdropdowntwo(this.options[this.selectedIndex].value);" id="sub_subcategory"><option value="">Select the above option</option></select>')
-								        </script>
-								        <noscript>
-								            <select name="sub_subcategory" id="sub_subcategory">
-								                <option value="">Please select the algorithm for training:</option>
-								            </select>
-								        </noscript>
-								    </div>
-								</li>
-							    
-							    <li class="blocko">
-								    <div class="sub_subbcategory_div" id="sub_subbcategory_div">Please select the feature for training:
-								        <script type="text/javascript" language="JavaScript">
-								            document.write('<select name="sub_subbcategory" onchange="javascript: urlRedirectTo(this.options[this.selectedIndex].value);" id="sub_subbcategory"><option value="">Select the above option</option></select>')
-								        </script>
-								        <noscript>
-								            <select name="sub_subbcategory" id="sub_subbcategory">
-								                <option value="">Please select the feature for training:</option>
-								            </select>
-								        </noscript>
-								    </div>
-								</li>
-							</ol>
+                    <div class="row blocko" id="objective">
+                        <div class="col text-justify">
+                            <h1>Objective</h1>
+                            <br>
+                            <p>
+                                The objective of the experiment is to know the importance of selecting proper features for training a model and size of training corpus in learning how to do cunking.
+                            </p>
+                        </div>
+                    </div>
 
-						    <p class="blocko" id="pi"></p>
-						    
-						    <div class="container-fluid">
-						    	<div class="row">
-						    		<div class="col">
-									    <button type="button" style="display:none;" class="btn btn-light" onclick="answer();" id="accuracy">Check Accuracy</button>
-									</div>
-									<div class="col">						    
-						    			<p class="blocko float-right" id="p1"></p>
-						    		</div>
-						    	</div>
-						    </div>
+                    <div class="row blocko" id="experiment">
+                        <div class="col">
+                            <h1>Experiment</h1>
 
-						</div>
-					</div>
+                            <ol>
+                                <li class="blocko">
+                                    <div class="category_div" id="category_div">Please specify language:
+                                        <select name="category" class="required-entry" id="category" onclick="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+                                            <option value="">Select Language</option>
+                                            <option value="English">English</option>
+                                            <option value="Hindi">Hindi</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li class="blocko">
+                                    <div class="sub_category_div" id="sub_category_div">Please select the size of a corpus:
+                                        <script type="text/javascript" language="JavaScript">
+                                            document.write('<select name="subcategory" id="subcategory" onchange="javascript: dynamicdropdownone(this.options[this.selectedIndex].value);"><option value="">Select the above option</option></select>')
+                                        </script>
+                                        <noscript>
+                                            <select name="subcategory" id="subcategory">
+                                                <option value="">Please select the size of a corpus:</option>
+                                            </select>
+                                        </noscript>
+                                    </div>
+                                </li>
 
-					<div class="row blocko" id="quiz">
-						<div class="col text-justify">
-							<h1>Quiz</h1>
-							<br>
-							<ul class="list-group">
-								<li class="list-group-item d-flex justify-content-between align-items-center">
-									How is training model formed in CRF?
-									<span class="badge badge-primary badge-pill">5</span>
-								</li>
-								<li class="list-group-item d-flex justify-content-between align-items-center">
-									How is training model formed in TnT?
-									<span class="badge badge-primary badge-pill">5</span>
-								</li>
-								<li class="list-group-item d-flex justify-content-between align-items-center">
-									How is testing done in CRF?
-									<span class="badge badge-primary badge-pill">5</span>
-								</li>
-								<li class="list-group-item d-flex justify-content-between align-items-center">
-									How is testing done in TnT?
-									<span class="badge badge-primary badge-pill">5</span>
-								</li>
-								<li class="list-group-item d-flex justify-content-between align-items-center">
-									Which features are helpful for training a model for chunking?
-									<span class="badge badge-primary badge-pill">10</span>
-								</li>
-							</ul>
-						</div>
-					</div>
+                                <li class="blocko">
+                                    <div class="sub_subcategory_div" id="sub_subcategory_div">Please select the algorithm for training:
+                                        <script type="text/javascript" language="JavaScript">
+                                            document.write('<select name="sub_subcategory" onchange="javascript: dynamicdropdowntwo(this.options[this.selectedIndex].value);" id="sub_subcategory"><option value="">Select the above option</option></select>')
+                                        </script>
+                                        <noscript>
+                                            <select name="sub_subcategory" id="sub_subcategory">
+                                                <option value="">Please select the algorithm for training:</option>
+                                            </select>
+                                        </noscript>
+                                    </div>
+                                </li>
 
-					<div class="row blocko" id="procedure">
-						<div class="col text-justify">
-							<h1>Procedure</h1>
-							<br>
+                                <li class="blocko">
+                                    <div class="sub_subbcategory_div" id="sub_subbcategory_div">Please select the feature for training:
+                                        <script type="text/javascript" language="JavaScript">
+                                            document.write('<select name="sub_subbcategory" onchange="javascript: urlRedirectTo(this.options[this.selectedIndex].value);" id="sub_subbcategory"><option value="">Select the above options</option></select>')
+                                        </script>
+                                        <noscript>
+                                            <select name="sub_subbcategory" id="sub_subbcategory">
+                                                <option value="">Please select the feature for training:</option>
+                                            </select>
+                                        </noscript>
+                                    </div>
+                                </li>
+                            </ol>
 
-							<ol class="list-group list-group-flush">
-								<li class="list-group-item">
-									1. Select the language.
-									<span class="badge badge-primary badge-pill">Dropdowns will follow</span>
-								</li>
-								<li class="list-group-item">
-									2. Select corpuse size
-								</li>
-								<li class="list-group-item">
-									3. Select Algorithm
-								</li>
-								<li class="list-group-item">
-									4. Select feature
-								</li>
-								<li class="list-group-item">
-									<span class="badge badge-primary badge-pill">Corresponding Accuracy will be shown</span>
-								</li>
-							</ol>
-							
-						</div>
-					</div>
+                            <p class="blocko" id="pi"></p>
 
-				</div>
-			</div>
-		</div>
-	</div>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="button" style="display:none;" class="btn btn-light" onclick="answer();" id="accuracy">Check Accuracy</button>
+                                    </div>
+                                    <div class="col">
+                                        <p class="blocko float-right" id="p1"></p>
+                                    </div>
+                                </div>
+                            </div>
 
-	<!-- Bootstrap, JQeury JS files -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                        </div>
+                    </div>
 
-	<!-- Custom JS -->
-	<script type="text/javascript" src="./static/js/particles.js"></script>
-	<script type="text/javascript" src="./static/js/script.js"></script>
-	<script type="text/javascript" src="./static/js/building-chunker.js"></script>
+                    <div class="row blocko" id="quiz">
+                        <div class="col text-justify">
+                            <h1>Quiz</h1>
+                            <br>
+                            <form id="form">
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">How is training model formed in CRF?</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="50"></textarea>
+                                        </div>
+                                        <span class="badge badge-primary badge-pill">5</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea2">How is training model formed in TnT?</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" cols="50"></textarea>
+                                        </div>
+
+                                        <span class="badge badge-primary badge-pill">5</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea3">How is testing done in CRF?</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea3" rows="3" cols="50"></textarea>
+                                        </div>
+
+                                        <span class="badge badge-primary badge-pill">5</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea4">How is testing done in TnT?</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" cols="50"></textarea>
+                                        </div>
+
+                                        <span class="badge badge-primary badge-pill">5</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea5">Which features are helpful for training a model for chunking?</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea5" rows="3" cols="50"></textarea>
+                                        </div>
+
+                                        <span class="badge badge-primary badge-pill">10</span>
+                                    </li>
+
+                                </ul>
+
+                                <br>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col">
+                                            <center>
+                                                <button type="button" class="btn btn-light" onclick="document.getElementById('form').reset();console.log('Answers are being evaluated');alert('Answers will be evaluated soon!!!');" onsubmit="event.preventDefault()">Submit</button>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <div class="row blocko" id="procedure">
+                        <div class="col text-justify">
+                            <h1>Procedure</h1>
+                            <br>
+
+                            <ol class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    1. Select the language.
+                                    <span class="badge badge-primary badge-pill">Dropdowns will follow</span>
+                                </li>
+                                <li class="list-group-item">
+                                    2. Select corpuse size
+                                </li>
+                                <li class="list-group-item">
+                                    3. Select Algorithm
+                                </li>
+                                <li class="list-group-item">
+                                    4. Select feature
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge badge-primary badge-pill">Corresponding Accuracy will be shown</span>
+                                </li>
+                            </ol>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap, JQeury JS files -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="./static/js/particles.js"></script>
+    <script type="text/javascript" src="./static/js/script.js"></script>
+    <script type="text/javascript" src="./static/js/building-chunker.js"></script>
 </body>
+
 </html>

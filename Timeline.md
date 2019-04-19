@@ -15,6 +15,9 @@
 ## 14-16th March: Database Focus
 
 1. News Forum to be made. Database planning already done
-2. Add the 404 page.
-3. Test the Experiment
-4. Improve readability
+2. Test the Experiment
+3. Improve readability
+
+## 16th-19th March: CI and Unit Testing
+
+1. Travis CI integrated
